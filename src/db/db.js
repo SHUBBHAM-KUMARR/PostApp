@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
 async function connectDB(){
-  await mongoose.connect("mongodb://localhost:27017/PostApp")
+  await mongoose.connect(process.env.MONGO_URI)
   console.log("connected to db");
-  
+  console.log(mongoose.connection.readyState);
+    
 }
 
 module.exports = connectDB

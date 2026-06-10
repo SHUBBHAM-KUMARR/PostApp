@@ -1,7 +1,7 @@
 const {ImageKit} =require('@imagekit/nodejs')
 
 const client = new ImageKit({
-  privateKey: "private_It5JuDjjXv3sz7qKcaWhPcISurg=" // This is the default and can be omitted
+  privateKey: process.env.IMAGEKIT_PRIVATE_KEY // This is the default and can be omitted
 });
 
 async function uploadFile(buffer){
